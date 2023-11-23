@@ -9,7 +9,7 @@ const options = {
         }
 
     },
-    beforeCreate() {
+    Created() {
         const search = location.search
         const params = new URLSearchParams(search)
         this.id = params.get("id")

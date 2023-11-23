@@ -29,18 +29,17 @@
                 class=" absolute  w-full h-8 text-center font-bold text-white text-8xl p-2 items-center top-0 right-0 left-0 bottom-0 m-auto">
                 MOVIES</h1>
         </div>
-        <div id="app" class="flex">
-            <!-- <div class="flex flex-row">
-            <select name="genre" class="w-[100px]" v-on:change="select">
+        <div id="app" class="flex flex-col">
+            <div class="flex flex-row gap-3 justify-center pt-4">
+            <select name="genre" class="w-[100px] h-5" v-on:change="select">
                 <option value="all">All</option>
                 <template v-if="genres.length > 0" v-for="genre in genres">
-                    <option :value="genre">{{genre}}</option>
+                    <option v-bind:value="genre">{{genre}}</option>
                 </template>
             </select>
+            <input class="pl-4 h-5" type="text" placeholder=" title" v-on:input="searchs">
         </div>
-        <input class="pl-4 h-3/4" type="text" placeholder=" title" v-on:input="searchs">
-        </div> -->
-            <div class="flex gap-8 pt-8 px-20 justify-center items-center flex-wrap">
+            <div class="flex h-1/2 gap-8 pt-8 px-20 justify-center items-center flex-wrap">
                 <template v-if="moviesFiltradas.length > 0" v-for="movie in moviesFiltradas">
                     <article class=" flex flex-col items-center rounded-lg w-[300px] h-[650px] bg-slate-300">
                         <button v-on:click="fav(movie)">
