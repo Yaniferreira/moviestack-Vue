@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="./Recursos Moviestack/Moviestack_favicon.png" type="image/x-icon">
+    <title>Movies</title>
+</head>
+
+<body class="bg-teal-950 max-w-full pt-0 pb-0 pl-0 pr-0">
+    <header class="flex flex-row justify-between px-4">
+        <div class=" flex flex-row w-35 h-20 object-contain">
+            <img class="rounded" src="./Recursos Moviestack/Moviestack_isotipo.png" alt="isotipo">
+            <img src="./Recursos Moviestack/Moviestack_logotipo1.png" alt="logotipo">
+        </div>
+        <nav class="flex font-bold gap-10 items-center text-lg">
+            <a class="rounded-md bg-gray-400 px-3 py-1" href="../index.html">Home</a>
+            <a class=" rounded-md bg-gray-400 px-3 py-1" href="#">Movies</a>
+            <a class="rounded-md bg-gray-400 px-3 py-1" href="./favs.html">Favs</a>
+        </nav>
+    </header>
+    <main>
+        <div id="Banner" class=" relative flex   ">
+            <img class="h-[350px] w-full  object-bottom object-cover" src="./Recursos Moviestack/Banner.jpg"
+                alt="banner" id="bannerImg">
+            <h1
+                class=" absolute  w-full h-8 text-center font-bold text-white text-8xl p-2 items-center top-0 right-0 left-0 bottom-0 m-auto">
+                MOVIES</h1>
+        </div>
+        <div id="app" class="flex">
+            <!-- <div class="flex flex-row">
+            <select name="genre" class="w-[100px]" v-on:change="select">
+                <option value="all">All</option>
+                <template v-if="genres.length > 0" v-for="genre in genres">
+                    <option :value="genre">{{genre}}</option>
+                </template>
+            </select>
+        </div>
+        <input class="pl-4 h-3/4" type="text" placeholder=" title" v-on:input="searchs">
+        </div> -->
+            <div class="flex gap-8 pt-8 px-20 justify-center items-center flex-wrap">
+                <template v-if="moviesFiltradas.length > 0" v-for="movie in moviesFiltradas">
+                    <article class=" flex flex-col items-center rounded-lg w-[300px] h-[650px] bg-slate-300">
+                        <button v-on:click="fav(movie)">
+                            <img src="./Recursos Moviestack/like-rojo.png" alt="" class="mt-2 w-[30px] h-[25px]">
+                        </button>
+                        <img v-bind:src="'https://moviestack.onrender.com/static/'+movie.image" alt="" class="
+                        h-42 my-4 object-contein ">
+                        <h2 class="text-xl font-bold text-center">{{movie.title}}</h2>
+                        <h3 class="text-lg font-bold text-center">{{movie.tagline}}</h3>
+                        <p
+                            class="text-center text-lg whitespace-no-wrap overflow-hidden text-overflow-ellipsis max-w-200">
+                            {{movie.overview}}</p>
+                        <a :href="'./details.html?id='+movie.id" class=" px-2 bg-slate-600 rounded-lg">See more info</a>
+                    </article>
+                </template>
+                <template v-else>
+                    <h2 class=" text-5xl font-semibold">there are no matches...</h2>
+                </template>
+            </div>
+        </div>
+    </main>
+    <footer class=" flex fixed justify-center items-center font-semibold pt-3">
+        <h2>MINDHUB - Cohort52 - Yanina Ferreira</h2>
+    </footer>
+    <script type="module" src="./tailwind.config.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>
