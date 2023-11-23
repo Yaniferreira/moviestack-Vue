@@ -31,13 +31,13 @@
         </div>
         <div id="app" class="flex flex-col">
             <div class="flex flex-row gap-3 justify-center pt-4">
-            <select name="genre" class="w-[100px] h-5" v-on:change="select">
+            <select name="genre" class="w-[100px] h-5 rounded-md" v-on:change="select">
                 <option value="all">All</option>
                 <template v-if="genres.length > 0" v-for="genre in genres">
                     <option v-bind:value="genre">{{genre}}</option>
                 </template>
             </select>
-            <input class="pl-4 h-5" type="text" placeholder=" title" v-on:input="searchs">
+            <input class="pl-4 h-5 rounded-md" type="text" placeholder=" title" v-on:input="searchs">
         </div>
             <div class="flex h-1/2 gap-8 pt-8 px-20 justify-center items-center flex-wrap">
                 <template v-if="moviesFiltradas.length > 0" v-for="movie in moviesFiltradas">
