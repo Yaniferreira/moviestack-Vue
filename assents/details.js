@@ -9,7 +9,7 @@ const options = {
         }
 
     },
-    Created() {
+    created() {
         const search = location.search
         const params = new URLSearchParams(search)
         this.id = params.get("id")
@@ -23,9 +23,9 @@ const options = {
     },
     computed: {
         formatDate() {
-            const order = { day: 'numeric', month: 'long', year: 'numeric' }
-            const release = new Date(this.movie.release_date)
-            return release.toLocaleDateString("es-ES", order)
+            const order= { day: 'numeric', month: 'long', year: 'numeric' }
+            const release= new Date(this.movie.release_date)
+            return release.toLocaleDateString("es-ES",order)
         },
         formatRevenue() {
             return this.dotsNumbers(this.movie.revenue)
@@ -37,7 +37,7 @@ const options = {
             return (this.movie.vote_average * 10).toFixed(1)
         }
     },
-    methods: {
+    methods:{
         dotsNumbers(number) {
             if (number !== undefined && number !== null) {
                 return number.toLocaleString("en-US", {
